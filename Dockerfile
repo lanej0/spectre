@@ -5,7 +5,7 @@ RUN curl -Ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-lin
 RUN apt-get -qq update && apt-get -qq install fontconfig
 RUN ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' -e 's/security.debian.org/archive.debian.org/g' -e '/stretch-updates/d' /etc/apt/sources.list
-RUN sed -ri '/policy.*name="height"/s/value="([^"]*)"/value="32KP"/' /etc/ImageMagick-6/policy.xml
+RUN sed -ri '/policy.*name="height"/s/value="([^"]*)"/value="40KP"/' /etc/ImageMagick-6/policy.xml
 
 WORKDIR /app
 ADD Gemfile* /app/
